@@ -27,7 +27,7 @@ banner="""
                 |   |  |  _  ||  _  ||  ||__ --|
                 |___|  |_____||_____||__||_____|
                                                
-         _____2020 © copyright contacct: s4ndr01@tuta.io _______
+         _____2020 © copyleft contact: s4ndr01@tuta.io _______
 """
 print(banner)
 print("==>escribe help para ver ayuda\n==> vc para ver comandos")
@@ -41,7 +41,7 @@ def zerotlls():
             print("%s==>%sftp \ navega desde tu archivos\n"%(fg(158),attr(0))) 
             print("Observacion:\n\t Si usted tiene el mismo archivo zip y el password donde ejecuta\n\t el programa no es necesario especificar la ruta del directorio\n\t del archivo\n")
         elif console=="zpcrack":
-             print("\t\tzipcrack\n opcion:\n pw=>directorio\n z=>correr programa")
+             print("\t\tzipcrack\n opcion:\n pw=>directorio\n zc=>correr programa")
              try:
                  #observa linea 
                   consolez=input(str("zipcrack=>"))
@@ -143,6 +143,7 @@ def zerotlls():
     write="you program by pass "
     print (write)
     return
-
+#error report 
+#twitter sanS01b
 
 zerotlls()
