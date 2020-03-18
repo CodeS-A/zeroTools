@@ -1,18 +1,15 @@
 #!/usr/bin/dev python
 #_*_ codign: utf-8 _*_
 
-from colored import fg, bg, attr
-import os
-import sys
-import subprocess
-import zipfile
+import os ,sys
+import subprocess, zipfile
 from ftplib import FTP
-import requests
-import socket 
+import requests, socket 
 import time
 from bs4 import BeautifulSoup
 from colorama  import init
-
+from colored import fg, bg, attr
+from progress.spinner import Spinner
 init(autoreset=True)
 
 banner="""
@@ -27,40 +24,41 @@ banner="""
                 |   |  |  _  ||  _  ||  ||__ --|
                 |___|  |_____||_____||__||_____|
                                                
-         _____2020 © copyleft contact: s4ndr01@tuta.io _______
+        _______2020 © copyleft contact: s4ndr01@tuta.io _______
 """
 print(banner)
-print("==>escribe help para ver ayuda\n==> vc para ver comandos")
+print("\t\t%sBETA 0.1\n\t\t==> help para ver ayuda\n\t\t==> vc para ver comandos"%(fg(178)))
 def zerotlls():
     while True:
-        console=input(str("zerotools=>"))
+        console=input(str("%szerotools=>%s"%(fg(199),attr(0))))
         if console=="help":
             print ("Opciones:\n" )
-            print("%s==>%szipcrack\ directorio del archivo \contraseña para fuerza bruta en formato txt passwd.text\n ejemple:\n=>zipcrack \dir\dir\dir\n=>zipcrack=>passwd.txt\n=>pw\ ver directorio actual\n"%(fg(158), attr(0))) 
-            print("%s==>%sip\ imprime tu ip oline\n"%(fg(158),attr(0)))
-            print("%s==>%sftp \ navega desde tu archivos\n"%(fg(158),attr(0))) 
+            print("%s==>%szipcrack\ directorio del archivo \contraseña para fuerza bruta en formato txt passwd.text\n ejemple:\n=>zipcrack \dir\dir\dir\n=>zipcrack=>passwd.txt\n=>pw\ ver directorio actual\n"%(fg(165), attr(0)))
+            print("%s%s==>%sip\ imprime tu ip oline\n"%(fg(165),bg(232),attr(0)))
+            print("%s==>%sftp \ navega desde tu archivos\n"%(fg(165),attr(0))) 
             print("Observacion:\n\t Si usted tiene el mismo archivo zip y el password donde ejecuta\n\t el programa no es necesario especificar la ruta del directorio\n\t del archivo\n")
         elif console=="zpcrack":
-             print("\t\tzipcrack\n opcion:\n pw=>directorio\n zc=>correr programa")
+             print("\n\t\tzipcrack\n opcion:\n pw=>directorio\n run=>lanzar zpcrack")
              try:
                  #observa linea 
                   consolez=input(str("zipcrack=>"))
                   if consolez=="pw":
                        dirt=subprocess.call('pwd')
                        print(dirt,consolez)
-                  elif consolez=="zc":
-                         nmzip=input(str("=>zipcrack=>"))
+                  elif consolez=="run":
+                         nmzip=input(str("run=>zipcrack=>"))
                          zipi=zipfile.ZipFile(nmzip)
-                         dirub=input(str("=>zipcrack=>"))
+                         dirub=input(str("run=>zipcrack=>"))
                          files=open(dirub)
                          for line in files.readlines():
                                 passw=line.strip('\n')
                          #observar linea
                          try:
                                     zipi.extractall(pwd=bytes(passw,'utf-8'))
-                                    print ("[+]Extracion Completa",passw)
+                                    print ('%s[+]Cargando%s'%(bg(1),attr(0)))
+                                    print ("%s[+]Extracion Completa\n [Contraseña: ",passw)
                          except:
-                                    print ('.....')
+                                    print ('.__ningun archivo o contraseña no encontrada__.')
                   else:
                         print ("end")     
              except TypeError:
@@ -143,7 +141,7 @@ def zerotlls():
     write="you program by pass "
     print (write)
     return
-#error report 
-#twitter sanS01b
+
 
 zerotlls()
+#report error s4ndr01@tuta.io
