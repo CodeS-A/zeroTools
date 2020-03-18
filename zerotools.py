@@ -56,7 +56,7 @@ def zerotlls():
                          try:
                                     zipi.extractall(pwd=bytes(passw,'utf-8'))
                                     print ('%s[+]Cargando%s'%(bg(1),attr(0)))
-                                    print ("%s[+]Extracion Completa\n [Contraseña: ",passw)
+                                    print ("[+]Extracion Completa\n Contraseña: ",passw)
                          except:
                                     print ('.__ningun archivo o contraseña no encontrada__.')
                   else:
