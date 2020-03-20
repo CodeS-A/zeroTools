@@ -12,43 +12,52 @@ from colored import fg, bg, attr
 from progress.spinner import Spinner
 init(autoreset=True)
 
-banner="""
-
-                                            
-                 .-----..-----..----..-----.
-                 |-- __||  -__||   _||  _  |")
-                 |_____||_____||__|  |_____|
-                                            
-               _______                __        
-              |_     _|.-----..-----.|  |.-----.
-                |   |  |  _  ||  _  ||  ||__ --|
-                |___|  |_____||_____||__||_____|
+banner="""                         
+                        ╱╱╱╱╱╱╱╱╱╱╱╭━━━━╮╱╱╱╱╭╮
+                        ╱╱╱╱╱╱╱╱╱╱╱┃╭╮╭╮┃╱╱╱╱┃┃
+                        ╭━━━┳━━┳━┳━┻┫┃┃┣┻━┳━━┫┃╭━━╮
+                        ┣━━┃┃┃━┫╭┫╭╮┃┃┃┃╭╮┃╭╮┃┃┃━━┫
+                        ┃┃━━┫┃━┫┃┃╰╯┃┃┃┃╰╯┃╰╯┃╰╋━━┃
+                        ╰━━━┻━━┻╯╰━━╯╰╯╰━━┻━━┻━┻━━╯              
+           
                                                
         _______2020 © copyleft contact: s4ndr01@tuta.io _______
 """
 print(banner)
-print("\t\t%sBETA 0.1\n\t\t==> help para ver ayuda\n\t\t==> vc para ver comandos"%(fg(178)))
+print("\t\t%sBETA 0.1\n\t\t==> help o h para ver ayuda\n\t\t==> vc o c para ver comandos"%(fg(178)))
 def zerotlls():
     while True:
         console=input(str("%szerotools=>%s"%(fg(199),attr(0))))
-        if console=="help":
+        if console=="help" or console=="h":
             print ("Opciones:\n" )
-            print("%s==>%szipcrack\ directorio del archivo \contraseña para fuerza bruta en formato txt passwd.text\n ejemple:\n=>zipcrack \dir\dir\dir\n=>zipcrack=>passwd.txt\n=>pw\ ver directorio actual\n"%(fg(165), attr(0)))
-            print("%s%s==>%sip\ imprime tu ip oline\n"%(fg(165),bg(232),attr(0)))
-            print("%s==>%sftp \ navega desde tu archivos\n"%(fg(165),attr(0))) 
+            print("%s==>%szipcrack o 1:\ directorio del archivo \contraseña para fuerza bruta en formato txt passwd.text\n ejemplo:\n=>zipcrack \dir\dir\dir\n=>zipcrack=>passwd.txt\n=>pw\ ver directorio actual\n"%(fg(165), attr(0)))
+            print("%s%s==>%sftp: o 2: conexion de tu ftp\n"%(fg(165),bg(232),attr(0)))
+            print("%s==>%sip o 3: Ver Ip online"%(fg(165),attr(0))) 
             print("Observacion:\n\t Si usted tiene el mismo archivo zip y el password donde ejecuta\n\t el programa no es necesario especificar la ruta del directorio\n\t del archivo\n")
-        elif console=="zpcrack":
-             print("\n\t\tzipcrack\n opcion:\n pw=>directorio\n run=>lanzar zpcrack")
+        elif console=="zpcrack" or console=="1":
+             print  ("""
+                        ╋╋╋╋╋╋╋┏━━━┓╋╋╋╋╋╋╋┏┓
+                        ╋╋╋╋╋╋╋┃┏━┓┃╋╋╋╋╋╋╋┃┃
+                        ┏━━━┳━━┫┃╋┗╋━┳━━┳━━┫┃┏┓
+                        ┣━━┃┃┏┓┃┃╋┏┫┏┫┏┓┃┏━┫┗┛┛
+                        ┃┃━━┫┗┛┃┗━┛┃┃┃┏┓┃┗━┫┏┓┓
+                        ┗━━━┫┏━┻━━━┻┛┗┛┗┻━━┻┛┗┛
+                        ╋╋╋╋┃┃
+                        ╋╋╋╋┗┛          	     
+             	           """) 
+             	
+             print("\t\tzipcrack\n opcion:\t pw=>directorio\t run=>lanzar zpcrack")
              try:
                  #observa linea 
                   consolez=input(str("zipcrack=>"))
                   if consolez=="pw":
                        dirt=subprocess.call('pwd')
                        print(dirt,consolez)
+                       zerotlls()
                   elif consolez=="run":
-                         nmzip=input(str("run=>zipcrack=>"))
+                         nmzip=input(str("run=>zip>"))
                          zipi=zipfile.ZipFile(nmzip)
-                         dirub=input(str("run=>zipcrack=>"))
+                         dirub=input(str("run=>password>"))
                          files=open(dirub)
                          for line in files.readlines():
                                 passw=line.strip('\n')
@@ -64,12 +73,12 @@ def zerotlls():
              except TypeError:
                   print("fail")
         
-        elif console=="vc":
+        elif console=="vc" or console=="c":
                           print("\t\t zpcrack: zip cracked\n\t\t ftp: conexion ftp\n\t\t ip: ver ip\n")
         else:
              pass
         
-        if console=="ftp":
+        if console=="ftp" or console=="2":
                   CLA="\x1b[5;30;42m"
                   CLV="\x1b[5;30;42m"
                   CLR="\x1b[5;31;40m"
@@ -77,7 +86,6 @@ def zerotlls():
                   ZR="\x1b[0m"
                   sockets=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                   connects=False
-                  print ("Inicie secion:")
                   ftpc=input("ftp#serve>")
                   ftpcs=FTP(ftpc)
                   print ("Ingrese Datos:")
@@ -115,7 +123,7 @@ def zerotlls():
         else:
                   pass
 
-        if console=="ip":
+        if console=="ip" or console=="3":
             url={
             	'url1': 'https://www.miip.es' 
             	}
@@ -144,4 +152,3 @@ def zerotlls():
 
 
 zerotlls()
-#report error s4ndr01@tuta.io
