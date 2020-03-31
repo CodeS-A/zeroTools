@@ -171,6 +171,6 @@ if __name__=="__main__":
         elif i=="ip" or i=="3":
               ip()
         else:
-            print("waring%s%s !%s"%(fg(15),bg(1),attr(0)))
+            print("Peligro%s%s !%s"%(fg(15),bg(1),attr(0)))
 #proximos
 #reporta falla s4ndr01@tuta.io
