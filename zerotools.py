@@ -11,24 +11,13 @@ from colorama  import init
 from colored import fg, bg, attr
 from progress.spinner import PieSpinner
 from progress.bar import Bar
+from bnner import *
 init(autoreset=True)
 
-banner="""                         
-                        ╱╱╱╱╱╱╱╱╱╱╱╭━━━━╮╱╱╱╱╭╮
-                        ╱╱╱╱╱╱╱╱╱╱╱┃╭╮╭╮┃╱╱╱╱┃┃
-                        ╭━━━┳━━┳━┳━┻┫┃┃┣┻━┳━━┫┃╭━━╮
-                        ┣━━┃┃┃━┫╭┫╭╮┃┃┃┃╭╮┃╭╮┃┃┃━━┫
-                        ┃┃━━┫┃━┫┃┃╰╯┃┃┃┃╰╯┃╰╯┃╰╋━━┃
-                        ╰━━━┻━━┻╯╰━━╯╰╯╰━━┻━━┻━┻━━╯              
-           
-                                               
-        _______2020 © copyleft contact: s4ndr01@tuta.io _______
-"""
+
 #proximo window/linux
 #info=input(str("\n\t\t\t[1]windows[proximo]\n\t\t\t[2]Linux[proximo]\n\t\t\t[3]Android: "))
-print(banner)
-print("\t\t%sBETA 0.2\n\t\t==> help o h para ver ayuda\n\t\t"%(fg(178)))
-
+print ("\t\t%sBETA 0.2\n\t\t==> help o h \n\t\t"%(fg(178)))
 #revisar
 def Ayuda():
             print ("Opciones:\n" )
@@ -40,17 +29,8 @@ def Ayuda():
             
             
 def zerotlls():
-    print(""" 
-                          ╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋┏┓
-                          ╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋┃┃
-                          ┏━━━┳━━┳━━┳━┳━━┳━━┫┃┏┓
-                          ┣━━┃┃┏┓┃┏━┫┏┫┏┓┃┏━┫┗┛┛
-                          ┃┃━━┫┗┛┃┗━┫┃┃┏┓┃┗━┫┏┓┓
-                          ┗━━━┫┏━┻━━┻┛┗┛┗┻━━┻┛┗┛
-                          ╋╋╋╋┃┃
-                          ╋╋╋╋┗┛
-    """)
     while True:
+        import zbanner
         print("\t\tzipcrack\n opcion:\t\n pw=>directorio\t\n run=>lanzar zpcrack\t\n ran=>fuerza bruta solo numeros\t\n quit=>salir")
         console=input(str("%szerotools=>%s"%(fg(199),attr(0))))
         if console=="run" or console=="r":
@@ -89,11 +69,6 @@ def zerotlls():
 
 def ftp():
     #proximo
-    CLA="\x1b[5;30;42m"
-    CLV="\x1b[5;30;42m"
-    CLR="\x1b[5;31;40m"
-    CLC="\x1b[3;33;40m"
-    ZR="\x1b[0m"
     sockets=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     connects=False
     ftpc=input("ftp#serve>")
@@ -128,7 +103,7 @@ def ftp():
                 elif inp=="4":
                                   sys.os(exit)
                 else:
-                                  print ('opps')
+                       print ('opps')
 
 
 
@@ -170,7 +145,9 @@ if __name__=="__main__":
              ftp()
         elif i=="ip" or i=="3":
               ip()
+        elif i=='quit' or i=='q':
+            break
         else:
-            print("Peligro%s%s !%s"%(fg(15),bg(1),attr(0)))
+            print("waring%s%s !%s"%(fg(15),bg(1),attr(0)))
 #proximos
 #reporta falla s4ndr01@tuta.io
