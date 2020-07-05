@@ -1,6 +1,7 @@
 #!/usr/bin/dev python
 #_*_ codign: utf-8 _*_
 
+#wating for moth
 import os ,sys
 import subprocess, zipfile
 from ftplib import FTP
